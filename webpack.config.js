@@ -23,8 +23,8 @@ const config = {
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
     },
     proxy: {
-        '/api': {
-          target: 'http://www.cbr.ru/scripts/XML_daily.asp',
+        '/services': {
+          target: 'localhost:3000/services',
           secure: false,
           changeOrigin: true,
         },
