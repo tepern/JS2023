@@ -19,8 +19,8 @@ function load(data: any) {
   if (data) {
     const services: IService[] = JSON.parse(data);
     for (let i=0; i < services.length; i++) {
-      console.log(services[i]);
       const service: HTMLDivElement = document.createElement("div");
+      service.setAttribute("class", "service__item");
       const title: HTMLElement = document.createElement("h3");
       const link: HTMLElement = document.createElement("a");
       link.innerText = services[i].title;
@@ -28,11 +28,13 @@ function load(data: any) {
       title.append(link);
       const text: HTMLElement = document.createElement("p");
       text.innerText = services[i].description;
-      link.setAttribute("class", "service__text");
+      text.setAttribute("class", "service__text");
       const bottom: HTMLDivElement = document.createElement("div");
+      bottom.setAttribute("class", "service__bottom");
       bottom.append(title);
       bottom.append(text);
       const top: HTMLDivElement = document.createElement("div");
+      top.setAttribute("class", "service__top");
       const photo: HTMLElement = document.createElement("a");
       const img: HTMLElement = document.createElement("img");
       img.setAttribute("src", "images/services/" + services[i].photo);
